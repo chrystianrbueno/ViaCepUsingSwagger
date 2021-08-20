@@ -18,6 +18,12 @@ public class AdressesEntity {
 
 	}
 
+	public AdressesEntity(String zipCode, String publicPlace) {
+		super();
+		this.publicPlace = publicPlace;
+		this.zipCode = zipCode;
+	}
+
 	public String getPublicPlace() {
 		return publicPlace;
 	}
@@ -36,7 +42,7 @@ public class AdressesEntity {
 
 	@Override
 	public String toString() {
-		return "AdressesEntity [id=" + id + ", publicPlace=" + publicPlace + ", zipCode=" + zipCode + "]";
+		return "AdressesEntity [zipCode=" + zipCode + ", publicPlace=" + publicPlace + "]";
 	}
 
 }
