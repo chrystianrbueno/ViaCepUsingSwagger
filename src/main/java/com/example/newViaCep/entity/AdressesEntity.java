@@ -15,7 +15,6 @@ public class AdressesEntity {
 	private String zipCode;
 
 	public AdressesEntity() {
-
 	}
 
 	public AdressesEntity(String zipCode, String publicPlace) {
