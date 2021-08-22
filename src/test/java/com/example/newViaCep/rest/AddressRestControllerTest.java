@@ -29,7 +29,7 @@ class AddressRestControllerTest {
 				.get("/api/addresses/zip/94935410"))
 					.andExpect(status().isOk())
 					.andExpect(content().contentType(MediaType.APPLICATION_JSON))
-					.andExpect(jsonPath("$.publicPlace").value("Rua Lídio Batista Soares"));
+					.andExpect(jsonPath("$.Logradouro").value("Rua Lídio Batista Soares"));
 	}
 
 
