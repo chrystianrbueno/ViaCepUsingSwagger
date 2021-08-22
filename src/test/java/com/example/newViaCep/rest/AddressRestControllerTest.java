@@ -18,7 +18,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
  */
 @SpringBootTest
 @AutoConfigureMockMvc
-class AdressesRestControllerTest {
+class AddressRestControllerTest {
 
 	@Autowired
 	MockMvc mvc;
@@ -26,7 +26,7 @@ class AdressesRestControllerTest {
 	@Test
 	public void testShouldReturnAdress() throws Exception {
 		mvc.perform(MockMvcRequestBuilders
-				.get("/api/adresses/zip/94935410"))
+				.get("/api/addresses/zip/94935410"))
 					.andExpect(status().isOk())
 					.andExpect(content().contentType(MediaType.APPLICATION_JSON))
 					.andExpect(jsonPath("$.publicPlace").value("Rua Lídio Batista Soares"));

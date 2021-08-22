@@ -6,23 +6,23 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.newViaCep.entity.AdressesEntity;
-import com.example.newViaCep.repository.AdressesRepository;
+import com.example.newViaCep.entity.AddressEntity;
+import com.example.newViaCep.repository.AddressRepository;
 /**
  * 
  * @author Chrystian Rocha
  *
  */
 @RestController
-@RequestMapping("api/adresses/")
-public class AdressesRestController {
+@RequestMapping("api/addresses/")
+public class AddressRestController {
 
 	@Autowired
-	AdressesRepository repository;
+	AddressRepository repository;
 
 	@GetMapping("zip/{zipCode}")
-	public AdressesEntity getAdress(@PathVariable String zipCode) {
+	public AddressEntity getAddress(@PathVariable String zipCode) {
 		return repository.findByZipCode(zipCode);
 	}
-
+	
 }

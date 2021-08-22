@@ -5,8 +5,15 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.example.newViaCep.rest.JacksonCustomAddressEntityDeserializer;
+import com.example.newViaCep.rest.JacksonCustomAddressEntitySerializer;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
 @Entity
-public class AdressesEntity {
+@JsonSerialize(using = JacksonCustomAddressEntitySerializer.class)
+@JsonDeserialize(using = JacksonCustomAddressEntityDeserializer.class)
+public class AddressEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -14,13 +21,17 @@ public class AdressesEntity {
 	private String publicPlace;
 	private String zipCode;
 
-	public AdressesEntity() {
+	public AddressEntity() {
 	}
 
-	public AdressesEntity(String zipCode, String publicPlace) {
+	public AddressEntity(String zipCode, String publicPlace) {
 		super();
 		this.publicPlace = publicPlace;
 		this.zipCode = zipCode;
+	}
+
+	public Long getId() {
+		return id;
 	}
 
 	public String getPublicPlace() {
