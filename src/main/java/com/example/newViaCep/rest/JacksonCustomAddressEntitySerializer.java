@@ -14,7 +14,7 @@ import com.fasterxml.jackson.databind.ser.std.StdSerializer;
  */
 public class JacksonCustomAddressEntitySerializer extends StdSerializer<AddressEntity> {
 
-	//private static final long serialVersionUID = -4022690158064513181L;
+	private static final long serialVersionUID = -4022690158064513181L;
 
 	public JacksonCustomAddressEntitySerializer() {
 		this(null);
@@ -32,6 +32,6 @@ public class JacksonCustomAddressEntitySerializer extends StdSerializer<AddressE
 		jgen.writeStringField("cep", address.getZipCode());
 		jgen.writeStringField("Logradouro", address.getPublicPlace());
 	
-		//jgen.writeEndObject();
+		jgen.writeEndObject();
 	}
 }

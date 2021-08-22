@@ -10,6 +10,12 @@ import com.example.newViaCep.rest.JacksonCustomAddressEntitySerializer;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
+/**
+ * 
+ * @author Fabricio
+ *
+ */
+
 @Entity
 @JsonSerialize(using = JacksonCustomAddressEntitySerializer.class)
 @JsonDeserialize(using = JacksonCustomAddressEntityDeserializer.class)
