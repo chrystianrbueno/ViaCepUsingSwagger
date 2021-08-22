@@ -1,9 +1,11 @@
 package com.example.newViaCep.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import com.example.newViaCep.rest.JacksonCustomAddressEntityDeserializer;
 import com.example.newViaCep.rest.JacksonCustomAddressEntitySerializer;
@@ -17,6 +19,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
  */
 
 @Entity
+@Table(name = "addresses")
 @JsonSerialize(using = JacksonCustomAddressEntitySerializer.class)
 @JsonDeserialize(using = JacksonCustomAddressEntityDeserializer.class)
 public class AddressEntity {
@@ -24,7 +27,10 @@ public class AddressEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	
+	@Column(name = "public_place")
 	private String publicPlace;
+	@Column(name = "zip_code")
 	private String zipCode;
 
 	public AddressEntity() {
