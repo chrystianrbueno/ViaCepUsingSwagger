@@ -32,14 +32,28 @@ public class AddressEntity {
 	private String publicPlace;
 	@Column(name = "zip_code")
 	private String zipCode;
+	@Column(name = "complement")
+	private String complement;
+	@Column(name = "district")
+	private String district;
+	@Column(name = "location")
+	private String location;
+	@Column(name = "federative_Unit")
+	private String federativeUnit;
 
 	public AddressEntity() {
 	}
 
-	public AddressEntity(String zipCode, String publicPlace) {
+	public AddressEntity(String zipCode, String publicPlace, 
+			             String complement, String district,
+			             String location, String federativeUnit) {
 		super();
 		this.publicPlace = publicPlace;
 		this.zipCode = zipCode;
+		this.complement = complement;
+		this.district = district;
+		this.location = location;
+		this.federativeUnit = federativeUnit;
 	}
 
 	public Long getId() {
@@ -62,9 +76,43 @@ public class AddressEntity {
 		this.zipCode = zipCode;
 	}
 
-	@Override
-	public String toString() {
-		return "AdressesEntity [zipCode=" + zipCode + ", publicPlace=" + publicPlace + "]";
+	public String getComplement() {
+		return complement;
 	}
 
+	public void setComplement(String complement) {
+		this.complement = complement;
+	}
+
+	public String getDistrict() {
+		return district;
+	}
+
+	public void setDistrict(String district) {
+		this.district = district;
+	}
+	
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+	public String getFederativeUnit() {
+		return federativeUnit;
+	}
+
+	public void setFederativeUnit(String federativeUnit) {
+		this.federativeUnit = federativeUnit;
+	}
+
+	@Override
+	public String toString() {
+		return "AddressEntity [id=" + id + ", publicPlace=" + publicPlace + ", zipCode=" + zipCode + ", complement="
+				+ complement + ", district=" + district + ", location=" + location + ", federativeUnit="
+				+ federativeUnit + "]";
+	}
+	
 }
