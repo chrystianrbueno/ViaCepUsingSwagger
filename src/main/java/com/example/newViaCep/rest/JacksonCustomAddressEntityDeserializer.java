@@ -35,11 +35,19 @@ public class JacksonCustomAddressEntityDeserializer extends StdDeserializer<Addr
 		
 		JsonNode node = parser.getCodec().readTree(parser);
 		AddressEntity address = new AddressEntity();
-		String zipCode = node.get("cep").asText(null);
-		String publicPlace = node.get("logradouro").asText(null);
+		String zipCode = node.get("Cep").asText(null);
+		String publicPlace = node.get("Logradouro").asText(null);
+		String complement = node.get("Complemento").asText(null);
+		String district = node.get("Bairro").asText(null);
+		String location = node.get("Localidade").asText(null);
+		String federativeUnit = node.get("UF").asText(null);
 		
 		address.setZipCode(zipCode);
 		address.setPublicPlace(publicPlace);
+		address.setComplement(complement);
+		address.setDistrict(district);
+		address.setLocation(location);
+		address.setFederativeUnit(federativeUnit);
 		
 		return address;
 	}
